@@ -34,7 +34,7 @@ const Home = () => {
   };
   const weatherDetailsByLocation = async () => {
     const query = `${location.lat},${location.long}`;
-    const apiURL = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`;
+    const apiURL = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`;
     await axios.get(apiURL).then((res) => {
       setData(res.data);
     });
@@ -42,7 +42,7 @@ const Home = () => {
 
   const weatherDetails = async () => {
     try {
-      const apiURL = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}&aqi=no`;
+      const apiURL = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}&aqi=no`;
       await axios.get(apiURL).then((res) => {
         setData(res.data);
       })
